@@ -19,19 +19,19 @@ export const metadata: Metadata = {
   },
   description: "Quà chúc mừng ngày Quốc tế phụ nữ 8/3 của LeeVyy",
   icons: {
-    icon: '/logo.png',
+    icon: '/logo.jpg',
   },
   openGraph: {
     locale: 'en_US',
     type: 'website',
     siteName: 'LeeVyy',
-    images: '/logo.png'
+    images: '/logo.jpg'
   },
   twitter: {
     site: '@trungtn',
     title: '%s | TntChat',
     description: 'Quà chúc mừng ngày Quốc tế phụ nữ 8/3 của LeeVyy',
-    images: ['/logo.png']
+    images: ['/logo.jpg']
   },
   metadataBase: new URL('https://acme.com'),
 };
@@ -44,6 +44,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_TRACKING_GA}`}
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${process.env.NEXT_PUBLIC_TRACKING_GA}');
+              `
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
