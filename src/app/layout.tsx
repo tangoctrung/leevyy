@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | LeeVyy',
+    template: 'LeeVyy',
     default: 'LeeVyy'
   },
   description: "Quà chúc mừng ngày Quốc tế phụ nữ 8/3 của LeeVyy",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     site: '@trungtn',
-    title: '%s | TntChat',
+    title: 'LeeVyy',
     description: 'Quà chúc mừng ngày Quốc tế phụ nữ 8/3 của LeeVyy',
     images: ['/logo.jpg']
   },

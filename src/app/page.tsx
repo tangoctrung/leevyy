@@ -1,15 +1,16 @@
+import Subpage from "@/subpage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'LeeVyy',
-  description: 'Quà chúc mừng ngày Quốc tế phụ nữ 8/3 của LeeVyy',
+  description: 'Trang web này là của LeeVyy',
   icons: {
-    icon: '/logo.png',
+    icon: '/logo.jpg',
   },
   generator: 'tntchat',
   applicationName: 'LeeVyy',
   referrer: 'origin-when-cross-origin',
-  keywords: ['LeeVyy', '8/3', 'quoctephunu', 'phunu'],
+  keywords: ['LeeVyy', '8/3', 'quoctephunu', 'phunu', "sinhnhat", "20/10", "25/10", "tet"],
   authors: [{ name: 'trungtn' }, { name: 'trungtn', url: 'https://tntchat.vercel.app' }],
   creator: 'trungtn',
   publisher: 'VietNam',
@@ -20,17 +21,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'LeeVyy',
-    description: 'Quà chúc mừng ngày Quốc tế phụ nữ 8/3 của LeeVyy',
+    description: 'Trang web này là của LeeVyy',
     url: 'https://leevyy.vercel.app',
     siteName: 'LeeVyy',
     images: [
       {
-        url: '/logo.png', // Must be an absolute URL
+        url: '/logo.jpg', // Must be an absolute URL
         width: 800,
         height: 600,
       },
       {
-        url: '/logo.png', // Must be an absolute URL
+        url: '/logo.jpg', // Must be an absolute URL
         width: 1800,
         height: 1600,
         alt: 'My custom alt',
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <section>
-      LeeVyy
+      <Subpage />
     </section>
   );
 }
