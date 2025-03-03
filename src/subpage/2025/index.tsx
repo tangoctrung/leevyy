@@ -1,4 +1,4 @@
-"client"
+"use client"
 import { DAYS } from '@/types'
 import { returnTypeDays } from '@/utils'
 import React, { useEffect, useState } from 'react'
@@ -16,8 +16,7 @@ function Subpage() {
     let now = new Date()
     let day = now.getDate()
     let month = now.getMonth() + 1
-    console.log({ day, month });
-    const type = returnTypeDays(day, month)
+    const type = process.env.NEXT_PUBLIC_TYPE_DAY as DAYS || returnTypeDays(day, month)
     setTypeDay(type)
   }, [])
 

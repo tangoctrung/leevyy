@@ -1,4 +1,5 @@
-import Subpage from "@/subpage";
+import LayoutMain from "@/components/layout";
+import Subpage from "@/subpage/2025";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -57,8 +58,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <section>
+    <LayoutMain>
       <Subpage />
-    </section>
+    </LayoutMain>
   );
 }
