@@ -22,7 +22,7 @@ function LayoutMain({
   return (
     <div className=''>
       <div
-        className='blockIntroduction fixed bottom-10 right-10 w-16 h-16 p-2 rounded-full cursor-pointer'
+        className='blockIntroduction fixed z-[1000] bottom-10 right-10 w-16 h-16 p-2 rounded-full cursor-pointer'
         onClick={() => setIsOpenModal(true)}
       >
         <div className='relative'>
