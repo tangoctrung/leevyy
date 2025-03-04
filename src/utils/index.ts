@@ -21,3 +21,53 @@ export function returnTypeDays(day: number, month: number): DAYS {
   }
   return "";
 }
+
+export function formatTimeHourNormalDay() {
+  const timeNow = new Date();
+  const hour =
+    timeNow.getHours() >= 10 ? timeNow.getHours() : "0" + timeNow.getHours();
+  const minutes =
+    timeNow.getMinutes() >= 10
+      ? timeNow.getMinutes()
+      : "0" + timeNow.getMinutes();
+  const second =
+    timeNow.getSeconds() >= 10
+      ? timeNow.getSeconds()
+      : "0" + timeNow.getSeconds();
+  return hour + ":" + minutes + ":" + second;
+}
+
+export function formatTimeNormalDay() {
+  const days = [
+    "Chủ Nhật",
+    "Thứ Hai",
+    "Thứ Ba",
+    "Thứ Tư",
+    "Thứ Năm",
+    "Thứ Sáu",
+    "Thứ Bảy",
+  ];
+  const timeNow = new Date();
+  const dayOfWeek = days[timeNow.getDay()];
+  const day = timeNow.getDate();
+  const month = timeNow.getMonth() + 1;
+  const year = timeNow.getFullYear();
+  return dayOfWeek + ", ngày " + day + " tháng " + month + " năm " + year;
+}
+
+export function formatTimeHolidayNormalDay() {
+  const days = [
+    "Tết Dương Lịch",
+    "Valentine's",
+    "Quốc tế Phụ nữ",
+    "Phự nữ Việt Nam",
+    "Sinh nhật bé iu - LeeVyy",
+    "Giáng Sinh",
+  ];
+  const timeNow = new Date();
+  const dayOfWeek = days[timeNow.getDay()];
+  const day = timeNow.getDate();
+  const month = timeNow.getMonth() + 1;
+  const year = timeNow.getFullYear();
+  return dayOfWeek + ", ngày " + day + " tháng " + month + " năm " + year;
+}
