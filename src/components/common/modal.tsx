@@ -19,10 +19,13 @@ function Modal({
     if (onClose) onClose()
   }
 
-  if (!isOpen) return <></>
+  // if (!isOpen) return <></>
   return (
-    <div className="w-[100svw] h-[100svh] fixed top-0 left-0 flex justify-center items-center z-[1001]">
-      <div className="absolute top-0 left-0 w-full h-full z-[-1] bg-bg2/20 cursor-pointer backdrop-blur" onClick={handleCloseModal} title='Click để đóng modal'></div>
+    <div className={`fixed ${isOpen ? "top-0 left-0 w-[100svw] h-[100svh] z-[1000]" : "top-[45%] left-[45%] w-0 h-0 opacity-0 -z-10"} flex justify-center items-center transition-all duration-300`}>
+      <div className="absolute top-0 left-0 w-full h-full z-[-1] cursor-pointer backdrop-blur"
+        onClick={handleCloseModal}
+        title='Click để đóng modal'
+      ></div>
       <div className="flex justify-center items-center">
         {children}
       </div>

@@ -23,7 +23,7 @@ function Subpage() {
   return (
     <div>
       {typeDay === "1/1" && <LunarNewYearDay />}
-      {(typeDay === "14/2" || typeDay === "14/3") && <ValentineDay />}
+      {(typeDay === "14/2") && <ValentineDay />}
       {typeDay === "8/3" && <InternationalWomenDay />}
       {typeDay === "20/10" && <VietnameseWomenDay />}
       {typeDay === "25/10" && <Birthday />}
