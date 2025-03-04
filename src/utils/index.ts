@@ -71,14 +71,14 @@ export function formatTimeHolidayNormalDay() {
     year.toString() + "/" + days[1].value
   ).getTime();
   if (timeDayStart > timeNow.getTime()) {
-    return days[1].title + "(" + days[1].day + ")";
+    return days[1].title + " (" + days[1].day + ")";
   }
 
   const timeDayEnd = new Date(
     year.toString() + "/" + days[days.length - 1].value
   ).getTime();
   if (timeDayEnd < timeNow.getTime()) {
-    return days[0].title + "(" + days[0].day + "/" + (year + 1) + ")";
+    return days[0].title + " (" + days[0].day + "/" + (year + 1) + ")";
   }
 
   let indexOfDay = 0;
@@ -94,5 +94,5 @@ export function formatTimeHolidayNormalDay() {
       break;
     }
   }
-  return days[indexOfDay].title + "(" + days[indexOfDay].day + ")";
+  return days[indexOfDay].title + " (" + days[indexOfDay].day + ")";
 }

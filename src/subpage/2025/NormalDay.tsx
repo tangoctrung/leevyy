@@ -18,10 +18,8 @@ function NormalDay() {
       <div className='max-w-[96%] sm:max-w-[500px] w-fit p-5 rounded-2xl bg-[#2c325c] mt-[30svh]'>
         <p className='w-full text-center font-mono text-xl sm:text-3xl font-bold'>{time}</p>
         <p className='mt-2 font-mono text-lg font-bold'>{formatTimeNormalDay()}</p>
-      </div>
-      <div className='mt-5 max-w-[96%] sm:max-w-[500px] w-fit p-5 rounded-2xl bg-[#2c325c]/20 text-gray-300'>
-        <p className='w-full font-mono text-[10px] font-bold'>Ngày lễ sắp tới: </p>
-        <p className='mt-2 font-mono text-base sm:text-xl font-bold'>{formatTimeHolidayNormalDay()}</p>
+        <p className='text-center font-mono text-[12px] font-medium text-gray-400'>Sắp tới: {formatTimeHolidayNormalDay()}</p>
+        <p className='text-center font-mono text-[12px] font-medium text-gray-400'>(Em hãy đến đây vào ngày này nhé)</p>
       </div>
     </div>
   )
