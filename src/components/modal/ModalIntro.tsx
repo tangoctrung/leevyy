@@ -14,7 +14,7 @@ function ModalIntro({
 }: Props) {
   return (
     <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal} onClose={() => setIsOpenModal(false)}>
-      <div className={`w-[96%] sm:w-[400px] max-h-[90svh] overflow-y-scroll scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-slate-700 p-5 relative rounded-lg bg-slate-700`}>
+      <div className={`w-[380px] max-h-[90svh] overflow-y-scroll scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-slate-700 p-5 relative rounded-lg bg-slate-700`}>
         <div className='absolute top-0 right-0 p-1 rounded-full bg-slate-400 cursor-pointer' onClick={() => setIsOpenModal(false)}>
           <Icon icon="iconamoon:close-bold" className='text-red-600' width={20} height={20} />
         </div>
@@ -40,7 +40,7 @@ function ModalIntro({
           </div>
           <div className='flex items-center justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Điện thoại: </p>
-            <p className='w-[calc(100%-80px)] text-lg font-mono'>097.512.3067</p>
+            <p className='w-[calc(100%-80px)] text-lg font-mono'>0975.123.067</p>
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Quê quán: </p>
@@ -48,7 +48,11 @@ function ModalIntro({
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Yêu thích: </p>
-            <p className='w-[calc(100%-80px)] mt-[-4px] text-lg font-mono'>Đồ ngọt như socola, trà sữa,... và những lời nói ngọt ngào</p>
+            <p className='w-[calc(100%-80px)] mt-[-4px] text-lg font-mono'>Đồ ngọt như socola, trà sữa và những lời nói ngọt ngào</p>
+          </div>
+          <div className='flex items-start justify-start mt-1'>
+            <p className='w-[80px] text-sm font-sans'>Ghét: </p>
+            <p className='w-[calc(100%-80px)] mt-[-4px] text-lg font-mono'>Chắc là anh 💗💗💗</p>
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Liên lạc: </p>
@@ -67,7 +71,7 @@ function ModalIntro({
             </div>
           </div>
           <p className='mt-5 w-full h-[1px] bg-slate-300'></p>
-          <p className='mt-3'>Đây là trang web dành riêng cho LeeVyy nhé, vào mỗi dịp lễ nào đó, trang web sẽ cập nhật những giao diện mới, gửi lời chúc của anh đến LeeVyy. Hi vọng LeeVyy sẽ thích cái này...</p>
+          <p className='mt-3 text-justify'>Đây là trang web dành riêng cho LeeVyy nhé, vào mỗi dịp lễ nào đó, trang web sẽ cập nhật những giao diện mới, gửi lời chúc của anh đến LeeVyy. Hi vọng LeeVyy sẽ thích cái này...</p>
           <p className='mt-5 text-sm text-blue-500'>@Copyright by trungtn</p>
         </div>
       </div>
