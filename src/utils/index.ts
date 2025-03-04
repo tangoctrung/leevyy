@@ -52,22 +52,47 @@ export function formatTimeNormalDay() {
   const day = timeNow.getDate();
   const month = timeNow.getMonth() + 1;
   const year = timeNow.getFullYear();
-  return dayOfWeek + ", ngày " + day + " tháng " + month + " năm " + year;
+  return dayOfWeek + ", " + day + " tháng " + month + " " + year;
 }
 
 export function formatTimeHolidayNormalDay() {
   const days = [
-    "Tết Dương Lịch",
-    "Valentine's",
-    "Quốc tế Phụ nữ",
-    "Phự nữ Việt Nam",
-    "Sinh nhật bé iu - LeeVyy",
-    "Giáng Sinh",
+    { title: "Tết Dương Lịch", day: "1/1", value: "1/1" },
+    { title: "Valentine's", day: "14/2", value: "02/14" },
+    { title: "Quốc tế Phụ nữ", day: "8/3", value: "03/08" },
+    { title: "Phụ nữ Việt Nam", day: "20/10", value: "10/20" },
+    { title: "Sinh nhật LeeVyy", day: "25/10", value: "10/25" },
+    { title: "Giáng Sinh", day: "25/12", value: "12/25" },
   ];
   const timeNow = new Date();
-  const dayOfWeek = days[timeNow.getDay()];
-  const day = timeNow.getDate();
-  const month = timeNow.getMonth() + 1;
   const year = timeNow.getFullYear();
-  return dayOfWeek + ", ngày " + day + " tháng " + month + " năm " + year;
+
+  const timeDayStart = new Date(
+    year.toString() + "/" + days[1].value
+  ).getTime();
+  if (timeDayStart > timeNow.getTime()) {
+    return days[1].title + "(" + days[1].day + ")";
+  }
+
+  const timeDayEnd = new Date(
+    year.toString() + "/" + days[days.length - 1].value
+  ).getTime();
+  if (timeDayEnd < timeNow.getTime()) {
+    return days[0].title + "(" + days[0].day + "/" + (year + 1) + ")";
+  }
+
+  let indexOfDay = 0;
+  for (let index = 1; index < days.length; index++) {
+    const timeDayBefore = new Date(
+      year.toString() + "/" + days[index - 1].value
+    ).getTime();
+    const timeDay = new Date(
+      year.toString() + "/" + days[index].value
+    ).getTime();
+    if (timeDayBefore < timeNow.getTime() && timeNow.getTime() < timeDay) {
+      indexOfDay = index;
+      break;
+    }
+  }
+  return days[indexOfDay].title + "(" + days[indexOfDay].day + ")";
 }

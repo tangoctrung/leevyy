@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import ModalIntro from '../modal/ModalIntro';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 type props = {
   children: React.ReactNode
@@ -26,7 +27,9 @@ function LayoutMain({
         onClick={() => setIsOpenModal(true)}
       >
         <div className='relative'>
-          <p className='text-wrap text-center text-white'>Giới thiệu</p>
+          <div className='w-10 h-10 flex justify-center items-center'>
+            <Icon icon="tdesign:gesture-click-filled" />
+          </div>
           <div className='absolute top-0 left-0 w-10 h-10 bg-green-600 blur-xl'></div>
         </div>
       </div>

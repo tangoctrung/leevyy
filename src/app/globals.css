@@ -14,7 +14,7 @@ body {
 }
 
 .blockIntroduction {
-  animation: roundle 4s linear infinite;
+  animation: roundle 0.5s linear infinite;
   font-family: "Courier New", Courier, monospace;
 }
 .iconClick {
@@ -22,50 +22,21 @@ body {
 }
 @keyframes roundle {
   0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    font-weight: 600;
-    font-size: 12px;
+    font-size: 24px;
     width: 48px;
     height: 48px;
     bottom: 48px;
     right: 48px;
-  }
-  25% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    font-weight: 700;
-    font-size: 16px;
-    width: 64px;
-    height: 64px;
-    bottom: 40px;
-    right: 40px;
   }
   50% {
-    -webkit-transform: rotate(225deg);
-    transform: rotate(225deg);
-    font-weight: 600;
-    font-size: 12px;
+    font-size: 32px;
     width: 48px;
     height: 48px;
     bottom: 48px;
     right: 48px;
   }
-  75% {
-    -webkit-transform: rotate(315deg);
-    transform: rotate(315deg);
-    font-weight: 700;
-    font-size: 16px;
-    width: 64px;
-    height: 64px;
-    bottom: 40px;
-    right: 40px;
-  }
   100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    font-weight: 600;
-    font-size: 12px;
+    font-size: 24px;
     width: 48px;
     height: 48px;
     bottom: 48px;
