@@ -14,7 +14,7 @@ function ModalIntro({
 }: Props) {
   return (
     <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal} onClose={() => setIsOpenModal(false)}>
-      <div className={`w-[380px] max-h-[90svh] overflow-y-scroll scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-slate-700 p-5 relative rounded-lg bg-slate-700`}>
+      <div className={`w-[360px] max-h-[90svh] overflow-y-scroll scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-slate-700 p-5 relative rounded-lg bg-slate-700`}>
         <div className='absolute top-0 right-0 p-1 rounded-full bg-slate-400 cursor-pointer' onClick={() => setIsOpenModal(false)}>
           <Icon icon="iconamoon:close-bold" className='text-red-600' width={20} height={20} />
         </div>
@@ -32,27 +32,27 @@ function ModalIntro({
           <p className='mt-3 w-full h-[1px] bg-slate-300'></p>
           <div className='flex items-center justify-start mt-5'>
             <p className='w-[80px] text-sm font-sans'>Biệt danh: </p>
-            <p className='w-[calc(100%-80px)] text-lg font-mono'>LeeVyy</p>
+            <p className='w-[calc(100%-80px)] text-base font-mono'>LeeVyy</p>
           </div>
           <div className='flex items-center justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Ngày sinh: </p>
-            <p className='w-[calc(100%-80px)] text-lg font-mono'>25/10/2007 (Bọ Cạp)</p>
+            <p className='w-[calc(100%-80px)] text-base font-mono'>25/10/2007 (Bọ Cạp)</p>
           </div>
           <div className='flex items-center justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Điện thoại: </p>
-            <p className='w-[calc(100%-80px)] text-lg font-mono'>0975.123.067</p>
+            <p className='w-[calc(100%-80px)] text-base font-mono'>0975.123.067</p>
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Quê quán: </p>
-            <p className='w-[calc(100%-80px)] mt-[-4px] text-lg font-mono'>Văn Lãng, Tân Dân, Phú Xuyên, Hà Nội</p>
+            <p className='w-[calc(100%-80px)] mt-[-4px] text-base font-mono'>Văn Lãng, Tân Dân, Phú Xuyên, Hà Nội</p>
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Yêu thích: </p>
-            <p className='w-[calc(100%-80px)] mt-[-4px] text-lg font-mono'>Đồ ngọt như socola, trà sữa và những lời nói ngọt ngào</p>
+            <p className='w-[calc(100%-80px)] mt-[-4px] text-base font-mono'>Đồ ngọt như socola, trà sữa và những lời nói ngọt ngào</p>
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Ghét: </p>
-            <p className='w-[calc(100%-80px)] mt-[-4px] text-lg font-mono'>Chắc là anh 💗💗💗</p>
+            <p className='w-[calc(100%-80px)] mt-[-4px] text-base font-mono'>Chắc là anh 💗💗💗</p>
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Liên lạc: </p>
