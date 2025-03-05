@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'LeeVyy',
   description: 'Trang web này là của LeeVyy',
   icons: {
-    icon: '/logo.jpg',
+    icon: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d',
   },
   generator: 'tntchat',
   applicationName: 'LeeVyy',
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     siteName: 'LeeVyy',
     images: [
       {
-        url: '/logo.jpg', // Must be an absolute URL
+        url: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d', // Must be an absolute URL
         width: 800,
         height: 600,
       },
       {
-        url: '/logo.jpg', // Must be an absolute URL
+        url: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d', // Must be an absolute URL
         width: 1800,
         height: 1600,
         alt: 'My custom alt',
@@ -52,6 +52,12 @@ export const metadata: Metadata = {
     ],
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    site: '@trungtn',
+    title: 'LeeVyy',
+    description: 'Trang web này là của LeeVyy',
+    images: ['https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d']
   },
   metadataBase: new URL('https://acme.com'),
 }

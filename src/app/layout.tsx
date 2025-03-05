@@ -17,21 +17,22 @@ export const metadata: Metadata = {
     template: 'LeeVyy',
     default: 'LeeVyy'
   },
-  description: "Quà chúc mừng ngày Quốc tế phụ nữ 8/3 của LeeVyy",
+  description: "Trang web này là của LeeVyy",
   icons: {
-    icon: '/logo.jpg',
+    icon: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d',
   },
   openGraph: {
     locale: 'en_US',
     type: 'website',
     siteName: 'LeeVyy',
-    images: '/logo.jpg'
+    description: "Trang web này là của LeeVyy",
+    images: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d'
   },
   twitter: {
     site: '@trungtn',
     title: 'LeeVyy',
-    description: 'Quà chúc mừng ngày Quốc tế phụ nữ 8/3 của LeeVyy',
-    images: ['/logo.jpg']
+    description: 'Trang web này là của LeeVyy',
+    images: ['https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d']
   },
   metadataBase: new URL('https://acme.com'),
 };
