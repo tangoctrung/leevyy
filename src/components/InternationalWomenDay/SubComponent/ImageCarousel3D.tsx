@@ -3,6 +3,8 @@ import Image from 'next/image';
 import "./index.css"
 import { TypeAnimation } from 'react-type-animation';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import Modal from '@/components/common/modal';
+import SakuraFalling from './SakuraFall';
 
 type Props = {
   setStep: any
@@ -11,6 +13,8 @@ function ImageCarousel3D({
   setStep,
 }: Props) {
 
+  const [isComplete, setIsComplete] = useState(false)
+  const [isOpenModal, setIsOpenModal] = useState(false)
   const [isSound, setIsSound] = useState<boolean>(false)
   const [isShowClose, setIsShowClose] = useState(false)
   const [indexImage, setIndexImage] = useState(0)
@@ -89,14 +93,46 @@ function ImageCarousel3D({
     })
     setIsShowClose(false)
     if (indexImage >= 5) {
-      setTimeout(() => {
-        setStep("2")
-      }, 3000)
+      setIsComplete(true)
     }
+  }
+
+  function handleClickGuide() {
+    setIsOpenModal(true)
+  }
+
+  function handleComplete() {
+    setStep("2")
   }
 
   return (
     <div className='relative'>
+      {!isComplete &&
+        <div className='fixed left-[20px] top-10'>
+          <button
+            className='w-[130px] h-[42px] hover:scale-[1.15] opacity-40 duration-200 flex items-center justify-center bg-gray-700 font-mono outline-none border-none rounded-lg cursor-pointer'
+            title='Click me'
+            onClick={handleClickGuide}
+          >
+            <p className="text-sm font-bold">Hướng dẫn</p>
+            <div className='h-full w-[36px] flex justify-center items-center'>
+              <Icon icon={"tdesign:gesture-click-filled"} className='iconClick w-6 h-6' />
+            </div>
+          </button>
+        </div>}
+      {isComplete &&
+        <div className='absolute left-[50%] translate-x-[-50%] bottom-[-200px]'>
+          <button
+            className='w-[130px] h-[42px] hover:scale-[1.15] opacity-90 duration-200 flex items-center justify-center bg-gray-700 font-mono outline-none border-none rounded-lg cursor-pointer'
+            title='Click me'
+            onClick={handleComplete}
+          >
+            <p className="text-sm font-bold">Qua màn</p>
+            <div className='h-full w-[36px] flex justify-center items-center'>
+              <Icon icon={"tdesign:gesture-click-filled"} className='iconClick w-6 h-6' />
+            </div>
+          </button>
+        </div>}
       <div className='absolute w-full h-full bg-slate-400 blur-[100px]'></div>
       <div className="containerLightCycle relative w-[300px] h-[180px]">
         <div className='itemContainerImage itemContainerImage1'>
@@ -151,8 +187,8 @@ function ImageCarousel3D({
         </div>
       </div >
 
-      <div className={`fixed transition-all duration-300 
-        ${dataClick.image ? "z-[900] opacity-100 left-0 top-0 w-[100svw] h-[100svh]" : "-z-10 opacity-0 left-[50%] top-[50%] w-0 h-0"} 
+      <div className={`fixed left-0 top-0 w-[100svw] h-[100svh] transition-all duration-300 
+        ${dataClick.image ? "z-[900] opacity-100 " : "-z-10 opacity-0"} 
       `}
       >
         <div className={`w-full h-full flex mt-[20svh] items-center flex-col`}>
@@ -197,10 +233,17 @@ function ImageCarousel3D({
 
         </div>
       </div>
+      <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal}>
+        <div className='p-5 rounded-xl w-[360px] bg-slate-700'>
+          Ở đây có 5 phần quà, em ấn vào từng phần quà nó sẽ hiện ảnh và thông điệp anh muốn gửi đến em, khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc trên bên trái nhé, và em mở xong 5 phần quà là hoàn thành, khi đó sẽ hiện nút Qua màn, em ấn vào nút đó nhé :))
+        </div>
+      </Modal>
       {isSound &&
         <audio autoPlay loop hidden>
           <source src="/soundTypeKeyboard.mp3" type="audio/mpeg" />
         </audio>}
+
+      {isComplete && <SakuraFalling />}
     </div>
   );
 }

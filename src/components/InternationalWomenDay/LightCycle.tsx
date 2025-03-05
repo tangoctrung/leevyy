@@ -14,7 +14,7 @@ function LightCycle() {
       </div>
 
       <div className={`absolute top-0 left-0 flex items-center justify-center w-full h-full transition-opacity duration-500 ${step === "2" ? "opacity-100 z-10" : "opacity-0 -z-10"}`}>
-        <Summary />
+        <Summary step={step} />
       </div>
     </div>
   )

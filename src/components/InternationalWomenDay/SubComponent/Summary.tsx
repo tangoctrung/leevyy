@@ -2,7 +2,12 @@ import { sendMessageTelegram } from '@/utils';
 import React, { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation';
 
-function Summary() {
+type Props = {
+  step: "1" | "2"
+}
+function Summary({
+  step
+}: Props) {
   const [isSound, setIsSound] = useState<boolean>(false)
   const [isShowButton, setIsShowButton] = useState(false)
   const handleClickButton = (text: string) => {
@@ -12,6 +17,7 @@ function Summary() {
     }, 2000)
   }
 
+  if (step === "1") return;
   return (
     <div className='w-full h-full flex flex-col items-center mt-[30svh]'>
       <div className='w-[70%]'>
@@ -30,7 +36,7 @@ function Summary() {
                 setIsShowButton(true)
               },
             ]}
-            speed={90}
+            speed={20}
             style={{ whiteSpace: 'pre-line', height: '195px', display: 'block' }}
           />
         </p>
