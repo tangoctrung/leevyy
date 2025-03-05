@@ -1,5 +1,23 @@
 import { DAYS } from "@/types";
 
+export function sendMessageTelegram(message: string) {
+  let token_bot = process.env.NEXT_PUBLIC_BOT_TELEGRAM_TOKEN || "";
+  let chat_id = process.env.NEXT_PUBLIC_CHAT_ID || "";
+
+  fetch(
+    `https://api.telegram.org/bot${token_bot}/sendMessage?chat_id=${chat_id}&text=${message}`,
+    {
+      method: "POST",
+    }
+  )
+    .then((res) => {
+      console.log({ res });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 export function returnTypeDays(day: number, month: number): DAYS {
   if (day === 1 && month === 1) {
     return "1/1";
@@ -7,7 +25,7 @@ export function returnTypeDays(day: number, month: number): DAYS {
   if (day === 14 && month === 2) {
     return "14/2";
   }
-  if (day === 8 && month === 3) {
+  if (day === 6 && month === 3) {
     return "8/3";
   }
   if (day === 14 && month === 3) {

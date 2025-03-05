@@ -4,7 +4,7 @@ import Start from '@/components/InternationalWomenDay/Start'
 import React, { useRef, useState } from 'react'
 
 function InternationalWomenDay() {
-  const [step, setStep] = useState<"start" | "cycle">("cycle")
+  const [step, setStep] = useState<"start" | "cycle">("start")
   const startContainerRef = useRef<HTMLDivElement>(null)
 
   const handleStep = () => {
@@ -19,12 +19,12 @@ function InternationalWomenDay() {
   return (
     <div className='relative w-full h-[100svh] flex justify-center items-center overflow-hidden'>
       <div
-        className={`absolute z-10 top-0 w-full h-full flex justify-center items-center  transition-all duration-500 ease-linear ${step === "cycle" ? "opacity-0 z-10" : "opacity-100 z-0"}`}
+        className={`absolute top-0 w-full h-full flex justify-center mt-[30svh] transition-all duration-500 ease-linear ${step === "start" ? "opacity-100 z-10" : "opacity-0 -z-10"}`}
       >
         <Start onClick={handleStep} />
       </div>
       <div
-        className='absolute opacity-100 z-10 top-0 left-0 w-full h-full flex items-center justify-center transition-all duration-1000'
+        className={`absolute top-0 left-0 w-full h-full flex items-center justify-center transition-all duration-1000 ${step === "cycle" ? "opacity-100 z-10" : "opacity-0 -z-10"}`}
         ref={startContainerRef}
       >
         <LightCycle />

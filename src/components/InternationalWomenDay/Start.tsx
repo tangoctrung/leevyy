@@ -9,7 +9,7 @@ type Props = {
 function Start({
   onClick
 }: Props) {
-  const [step, setStep] = useState<"0" | "1" | "2" | "3">("0")
+  const [step, setStep] = useState<"0" | "1" | "2" | "3">("1")
   const [isSound, setIsSound] = useState<boolean>(false)
 
   const handleClickNext = () => {

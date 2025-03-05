@@ -33,7 +33,7 @@ function LayoutMain({
           <div className='absolute top-0 left-0 w-10 h-10 bg-green-600 blur-xl'></div>
         </div>
       </div>
-      <div className='fixed top-3 left-[50%] translate-x-[-50%] text-xl font-mono'>{firstTimeChat} ngày</div>
+      <div className='fixed z-[1000] top-3 left-[50%] translate-x-[-50%] text-xl font-mono'>{firstTimeChat} ngày</div>
       {children}
       <ModalIntro isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
     </div>

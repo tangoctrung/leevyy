@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import "./index.css"
 import { TypeAnimation } from 'react-type-animation';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
-function ImageCarousel3D() {
+type Props = {
+  setStep: any
+}
+function ImageCarousel3D({
+  setStep,
+}: Props) {
 
   const [isSound, setIsSound] = useState<boolean>(false)
+  const [isShowClose, setIsShowClose] = useState(false)
   const [indexImage, setIndexImage] = useState(0)
   const [imageChoosed, setImageChoosed] = useState({
     image1: "/gift.gif",
@@ -20,29 +27,47 @@ function ImageCarousel3D() {
   })
   const dataLightCycle = [
     {
-      // image: "/leevyy1.jpeg",
-      image: "/images.jpeg",
-      text: "Xin chao levyy 1",
+      image: "/leevyy1.jpeg",
+      // image: "/images.jpeg",
+      text: "Xin chào bé iu, 8/3 đầu tiên anh gặp được em nè, hi vọng em có một ngày thật là ý nghĩa. Dù chỉ là mới quen, nhưng mà chúc em:\n" +
+        "Một ngày hạnh phúc,\n" +
+        "một đời bình yên,\n" +
+        "cuộc sống không ưu phiền,\n" +
+        "và có anh kề bên.\n" +
+        "😊😊😊😊😊",
     },
     {
-      // image: "/leevyy5.png",
-      image: "/images.jpeg",
-      text: "Xin chao levyy 1",
+      image: "/leevyy5.png",
+      // image: "/images.jpeg",
+      text: "Hic, em nhìn ảnh này xem, giống đứa bé lớp 7 quá, nhưng mà cũm cute siêu đỉnh luôn😍😍😍\n" +
+        "Ai da, bây giờ muốn nựng má em quá, siêu nhớ bé cưng luôn.\n" +
+        "À hôm nay có ai tặng hoa cũm bảo là mình có mối khác rồi nhé 😒😒😒, đừng có mà nhận hoa xong nhận tình cảm của người ta đó 😌😌😌.",
     },
     {
-      // image: "/leevyy3.jpeg",
-      image: "/images.jpeg",
-      text: "Xin chao levyy 1",
+      image: "/leevyy3.jpeg",
+      // image: "/images.jpeg",
+      text: "Wow, hãy nhìn công chúa của anh nè, không biết em có ghen tỵ không, chứ anh hơi bị ghen tỵ vì nhan sắc siêu phẩm này nha.\n" +
+        "Môi thơm quá đi, lần gặp tới em biết phải làm gì rùi đó😉😉😉,"
     },
     {
-      // image: "/leevyy2.jpeg",
-      image: "/images.jpeg",
-      text: "Xin chao levyy 1",
+      image: "/leevyy2.jpeg",
+      // image: "/images.jpeg",
+      text: "Em định lườm ai zậy trời, nhìn ghéc vãi. Anh mà ở đấy là búng mũi em đó biết chưa😚😚😚\n" +
+        "Anh có bài thơ này tặng em nè, nhưng mà mở nốt hộp quà cuối nha, hehe\n"
     },
     {
-      // image: "/leevyy4.png",
-      image: "/images.jpeg",
-      text: "Xin chao levyy 1",
+      image: "/leevyy4.png",
+      // image: "/images.jpeg",
+      text: "Tặng em bài thơ này nè\n" +
+        "Đời anh sẽ chỉ là màn đêm\n" +
+        "Nếu như không bao giờ em đến\n" +
+        "Đời anh sẽ vô cùng hạnh phúc\n" +
+        "Nếu như đã có em kề bên\n" +
+        "Màn đêm trong anh phủ bầu trời\n" +
+        "Cô đơn đau khổ khắp mọi nơi\n" +
+        "Nhưng khi em vừa mới bước vào\n" +
+        "Nó đã trở thành nơi tuyệt vời\n" +
+        "Bài thơ còn một khúc nữa, nhưng mà anh sẽ đọc cho em nghe vào một dịp đặc biệt nha😚😚😚"
     }
   ]
   function handleClickImage(name: "image1" | "image2" | "image3" | "image4" | "image5") {
@@ -57,7 +82,18 @@ function ImageCarousel3D() {
     setIndexImage(i => i + 1)
   }
 
-  console.log({ dataClick });
+  function handleCloseImage() {
+    setDataClick({
+      image: "",
+      text: ""
+    })
+    setIsShowClose(false)
+    if (indexImage >= 5) {
+      setTimeout(() => {
+        setStep("2")
+      }, 3000)
+    }
+  }
 
   return (
     <div className='relative'>
@@ -115,35 +151,50 @@ function ImageCarousel3D() {
         </div>
       </div >
 
-      <div className={`fixed left-0 top-0 w-[100svw] h-[100svh] z-[900]`}>
+      <div className={`fixed transition-all duration-300 
+        ${dataClick.image ? "z-[900] opacity-100 left-0 top-0 w-[100svw] h-[100svh]" : "-z-10 opacity-0 left-[50%] top-[50%] w-0 h-0"} 
+      `}
+      >
         <div className={`w-full h-full flex mt-[20svh] items-center flex-col`}>
-          {dataClick.image && <div className='max-w-[700px] w-[90%] rounded-xl aspect-[2/1] overflow-hidden'>
-            <Image
-              src={dataClick.image || ""}
-              width={1800}
-              height={900}
-              alt=''
-              className='w-full h-full object-cover'
-            />
-          </div>}
-          <div className='mt-3 max-w-[700px] w-[90%] rounded-md bg-gray-600/80 p-2'>
-            <h3 className='w-full text-center font-sans text-base font-semibold'>
-              <TypeAnimation
-                sequence={[
-                  // Same substring at the start will only be typed once, initially
-                  1000,
-                  () => {
-                    setIsSound(true);
-                  },
-                  dataClick.text,
-                  () => {
-                    setIsSound(false);
-                  },
-                ]}
-                speed={10}
+          {dataClick.image &&
+            <div className='relative max-w-[700px] w-[90%] rounded-xl aspect-[5/3] overflow-hidden'>
+              <Image
+                src={dataClick.image || ""}
+                width={1800}
+                height={900}
+                alt=''
+                className='w-full h-full object-cover'
               />
-            </h3>
-          </div>
+              <div className='absolute top-0 right-[0%] max-w-[50%] rounded-md bg-gray-600/30 p-2 flex justify-center'>
+                <h3 className='w-fit font-mono text-base font-semibold'>
+                  <TypeAnimation
+                    sequence={[
+                      // Same substring at the start will only be typed once, initially
+                      1000,
+                      () => {
+                        setIsSound(true);
+                        setIsShowClose(false);
+                      },
+                      dataClick.text,
+                      () => {
+                        setIsSound(false);
+                        setIsShowClose(true);
+                      },
+                    ]}
+                    speed={20}
+                    style={{ whiteSpace: 'pre-line', display: 'block' }}
+                  />
+                </h3>
+              </div>
+              {isShowClose &&
+                <div
+                  className='absolute top-0 left-0 cursor-pointer p-1 rounded-full bg-gray-200 font-mono font-semibold text-sm'
+                  onClick={handleCloseImage}
+                >
+                  <Icon icon="iconamoon:close-bold" className='text-red-600' />
+                </div>}
+            </div>}
+
         </div>
       </div>
       {isSound &&
