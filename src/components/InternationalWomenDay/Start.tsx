@@ -4,10 +4,12 @@ import React, { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 
 type Props = {
-  onClick: any
+  onClick: any;
+  stepMain: "start" | "cycle";
 }
 function Start({
-  onClick
+  onClick,
+  stepMain
 }: Props) {
   const [step, setStep] = useState<"0" | "1" | "2" | "3">("1")
   const [isSound, setIsSound] = useState<boolean>(false)
@@ -23,7 +25,7 @@ function Start({
           className='w-full h-full  border-[1px] border-[#2888bc] rounded-xl p-5 overflow-scroll scrollbar-none'
           style={{ boxShadow: "#2888bc 0px 10px 50px" }}
         >
-          {(step === "1" || step === "2" || step === "3") &&
+          {(stepMain === "start" && step === "1" || step === "2" || step === "3") &&
             <h2 className='w-full text-center font-sans text-3xl font-bold'>
               <TypeAnimation
                 sequence={[

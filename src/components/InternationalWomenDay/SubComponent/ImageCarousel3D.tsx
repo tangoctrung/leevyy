@@ -5,6 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import Modal from '@/components/common/modal';
 import SakuraFalling from './SakuraFall';
+import ImageEffect from './ImageEffect';
 
 type Props = {
   setStep: any
@@ -103,6 +104,12 @@ function ImageCarousel3D({
 
   function handleComplete() {
     setStep("2")
+    setDataClick({
+      image: "",
+      text: ""
+    })
+    setIsComplete(false)
+    setIsSound(false)
   }
 
   return (
@@ -194,19 +201,20 @@ function ImageCarousel3D({
         <div className={`w-full h-full flex mt-[20svh] items-center flex-col`}>
           {dataClick.image &&
             <div className='relative max-w-[700px] w-[90%] rounded-xl aspect-[5/3] overflow-hidden'>
-              <Image
+              {/* <Image
                 src={dataClick.image || ""}
                 width={1800}
                 height={900}
                 alt=''
-                className='w-full h-full object-cover'
-              />
-              <div className='absolute top-0 right-[0%] max-w-[50%] rounded-md bg-gray-600/30 p-2 flex justify-center'>
+                className='w-full h-full object-cover' 
+              /> */}
+              <ImageEffect imageUrl={dataClick.image || ""} isVisible={dataClick.image ? true : false} />
+              <div className='absolute z-[101] bottom-[8px] left-0 max-w-[50%] rounded-md bg-gray-600/40 p-2 flex justify-center'>
                 <h3 className='w-fit font-mono text-base font-semibold'>
                   <TypeAnimation
                     sequence={[
                       // Same substring at the start will only be typed once, initially
-                      1000,
+                      1500,
                       () => {
                         setIsSound(true);
                         setIsShowClose(false);
@@ -224,7 +232,7 @@ function ImageCarousel3D({
               </div>
               {isShowClose &&
                 <div
-                  className='absolute top-0 left-0 cursor-pointer p-1 rounded-full bg-gray-200 font-mono font-semibold text-sm'
+                  className='absolute z-[101] top-0 left-0 cursor-pointer p-1 rounded-full bg-gray-200 font-mono font-semibold text-sm'
                   onClick={handleCloseImage}
                 >
                   <Icon icon="iconamoon:close-bold" className='text-red-600' />
@@ -241,6 +249,11 @@ function ImageCarousel3D({
       {isSound &&
         <audio autoPlay loop hidden>
           <source src="/soundTypeKeyboard.mp3" type="audio/mpeg" />
+        </audio>}
+
+      {isComplete &&
+        <audio autoPlay loop hidden>
+          <source src="/baby.mp3" type="audio/mpeg" />
         </audio>}
 
       {isComplete && <SakuraFalling />}

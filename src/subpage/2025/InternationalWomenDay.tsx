@@ -21,7 +21,7 @@ function InternationalWomenDay() {
       <div
         className={`absolute top-0 w-full h-full flex justify-center mt-[30svh] transition-all duration-500 ease-linear ${step === "start" ? "opacity-100 z-10" : "opacity-0 -z-10"}`}
       >
-        <Start onClick={handleStep} />
+        <Start onClick={handleStep} stepMain={step} />
       </div>
       <div
         className={`absolute top-0 left-0 w-full h-full flex items-center justify-center transition-all duration-1000 ${step === "cycle" ? "opacity-100 z-10" : "opacity-0 -z-10"}`}
