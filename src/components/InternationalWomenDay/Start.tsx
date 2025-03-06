@@ -2,6 +2,7 @@
 import { Icon } from '@iconify/react/dist/iconify.js'
 import React, { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
+import { motion } from 'framer-motion';
 
 type Props = {
   onClick: any;
@@ -11,7 +12,7 @@ function Start({
   onClick,
   stepMain
 }: Props) {
-  const [step, setStep] = useState<"0" | "1" | "2" | "3">("1")
+  const [step, setStep] = useState<"1" | "2" | "3">("1")
   const [isSound, setIsSound] = useState<boolean>(false)
 
   const handleClickNext = () => {
@@ -19,7 +20,12 @@ function Start({
   }
   return (
     <div>
-      <div className='relative w-[96%] sm:w-[600px] aspect-[8/5] rounded-xl'>
+      <motion.div
+        className='relative w-[96%] sm:w-[600px] aspect-[8/5] rounded-xl'
+        initial={{ x: '-100vw', rotate: -45 }}
+        animate={{ x: 0, rotate: 0 }}
+        transition={{ type: 'spring', stiffness: 120, damping: 10 }}
+      >
         <div className='absolute z-[-1] top-0 left-0 w-full h-full bg-[#0077b6] rounded-xl blur-[150px]'></div>
         <div
           className='w-full h-full  border-[1px] border-[#2888bc] rounded-xl p-5 overflow-scroll scrollbar-none'
@@ -30,7 +36,7 @@ function Start({
               <TypeAnimation
                 sequence={[
                   // Same substring at the start will only be typed once, initially
-                  1500,
+                  2000,
                   () => {
                     setIsSound(true);
                   },
@@ -46,6 +52,7 @@ function Start({
             <p className='mt-3 sm:text-base text-sm font-medium font-mono'>
               <TypeAnimation
                 sequence={[
+                  1000,
                   'Xin chào LeeVyy, đầu tiên anh muốn gửi lời chúc tốt đẹp nhất từ tận đáy lòng của anh đến em, chúc em một ngày 8/3 thật hạnh phúc và ý nghĩa.\n' +
                   'Đây là trang web đầu tiên mà anh làm chỉ để dành riêng cho một người (thực sự không nói xạo 😀😀😀).\n' +
                   'Anh mới bắt đầu làm cái này được mấy hôm thuii nên có lẽ vẫn còn hơi sơ xài xíu, mong em thích nó.\n' +
@@ -67,7 +74,7 @@ function Start({
           <audio autoPlay loop hidden>
             <source src="/soundTypeKeyboard.mp3" type="audio/mpeg" />
           </audio>}
-      </div>
+      </motion.div>
       {step === "3" &&
         <div className='mt-6 w-full flex justify-end'>
           <button
