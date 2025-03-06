@@ -22,21 +22,14 @@ const SakuraFalling = () => {
       {petals.map((petal) => (
         <motion.div
           key={petal.id}
+          className="absolute"
+          style={{ left: `${petal.left}%`, width: petal.size, height: petal.size, opacity: 0.8 }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: '100vh', opacity: 1 }}
-          transition={{
-            duration: petal.duration,
-            delay: petal.delay,
-            repeat: Infinity,
-          }}
-          className="absolute bg-pink-400 rounded-full"
-          style={{
-            left: `${petal.left}%`,
-            width: petal.size,
-            height: petal.size,
-            opacity: 0.8,
-          }}
-        />
+          transition={{ duration: petal.duration, delay: petal.delay, repeat: Infinity }}
+        >
+          🌸
+        </motion.div>
       ))}
     </div>
   );

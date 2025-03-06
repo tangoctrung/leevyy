@@ -5,13 +5,11 @@ import { TypeAnimation } from 'react-type-animation';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import Modal from '@/components/common/modal';
 import SakuraFalling from './SakuraFall';
-import ImageEffect from './ImageEffect';
+import ImageEffect from '../../Effect/ImageEffect';
 
 type Props = {
-  setStep: any
 }
 function ImageCarousel3D({
-  setStep,
 }: Props) {
 
   const [isComplete, setIsComplete] = useState(false)
@@ -102,16 +100,6 @@ function ImageCarousel3D({
     setIsOpenModal(true)
   }
 
-  function handleComplete() {
-    setStep("2")
-    setDataClick({
-      image: "",
-      text: ""
-    })
-    setIsComplete(false)
-    setIsSound(false)
-  }
-
   return (
     <div className='relative'>
       {!isComplete &&
@@ -122,19 +110,6 @@ function ImageCarousel3D({
             onClick={handleClickGuide}
           >
             <p className="text-sm font-bold">Hướng dẫn</p>
-            <div className='h-full w-[36px] flex justify-center items-center'>
-              <Icon icon={"tdesign:gesture-click-filled"} className='iconClick w-6 h-6' />
-            </div>
-          </button>
-        </div>}
-      {isComplete &&
-        <div className='absolute left-[50%] translate-x-[-50%] bottom-[-200px]'>
-          <button
-            className='w-[130px] h-[42px] hover:scale-[1.15] opacity-90 duration-200 flex items-center justify-center bg-gray-700 font-mono outline-none border-none rounded-lg cursor-pointer'
-            title='Click me'
-            onClick={handleComplete}
-          >
-            <p className="text-sm font-bold">Qua màn</p>
             <div className='h-full w-[36px] flex justify-center items-center'>
               <Icon icon={"tdesign:gesture-click-filled"} className='iconClick w-6 h-6' />
             </div>
@@ -201,13 +176,6 @@ function ImageCarousel3D({
         <div className={`w-full h-full flex mt-[20svh] items-center flex-col`}>
           {dataClick.image &&
             <div className='relative max-w-[700px] w-[90%] rounded-xl aspect-[5/3] overflow-hidden'>
-              {/* <Image
-                src={dataClick.image || ""}
-                width={1800}
-                height={900}
-                alt=''
-                className='w-full h-full object-cover' 
-              /> */}
               <ImageEffect imageUrl={dataClick.image || ""} isVisible={dataClick.image ? true : false} />
               <div className='absolute z-[101] bottom-[8px] left-0 max-w-[50%] rounded-md bg-gray-600/40 p-2 flex justify-center'>
                 <h3 className='w-fit font-mono text-base font-semibold'>
@@ -243,7 +211,7 @@ function ImageCarousel3D({
       </div>
       <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal}>
         <div className='p-5 rounded-xl w-[360px] bg-slate-700'>
-          Ở đây có 5 phần quà, em ấn vào từng phần quà nó sẽ hiện ảnh và thông điệp anh muốn gửi đến em, khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc trên bên trái nhé, và em mở xong 5 phần quà là hoàn thành, khi đó sẽ hiện nút Qua màn, em ấn vào nút đó nhé :))
+          Ở đây có 5 phần quà, em ấn vào từng phần quà nó sẽ hiện ảnh và thông điệp anh muốn gửi đến em, khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc trên bên trái nhé, và em mở xong 5 phần quà là hoàn thành:))
         </div>
       </Modal>
       {isSound &&
