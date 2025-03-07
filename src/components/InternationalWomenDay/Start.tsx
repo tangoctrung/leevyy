@@ -62,7 +62,7 @@ function Start({
                     setStep("3")
                   },
                 ]}
-                speed={90}
+                speed={20}
                 style={{ whiteSpace: 'pre-line', height: '195px', display: 'block' }}
               />
             </p>}
