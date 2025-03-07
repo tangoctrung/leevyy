@@ -211,7 +211,15 @@ function ImageCarousel3D({
       </div>
       <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal}>
         <div className='p-5 rounded-xl w-[360px] bg-slate-700'>
-          Ở đây có 5 phần quà, em ấn vào từng phần quà nó sẽ hiện ảnh và thông điệp anh muốn gửi đến em, khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc trên bên trái nhé, và em mở xong 5 phần quà là hoàn thành:))
+          <p className='text-base font-bold'>Ở đây có 5 phần quà: </p>
+          <ul className='mt-2 text-sm font-semibold font-mono text-gray-300'>
+            <li className=''>+ Em ấn vào từng phần quà nó sẽ hiện ảnh và thông điệp anh muốn gửi đến em.</li>
+            <li>+ Khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc trên bên trái nhé. </li>
+            <li>+ Em mở xong 5 phần quà là hoàn thành:)), sau đó hãy thưởng thức nó.</li>
+          </ul>
+          {/* + Em ấn vào từng phần quà nó sẽ hiện ảnh và thông điệp anh muốn gửi đến em. <br />
+          + Khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc trên bên trái nhé. <br />
+          + Em mở xong 5 phần quà là hoàn thành:)) */}
         </div>
       </Modal>
       {isSound &&
