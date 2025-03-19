@@ -44,7 +44,7 @@ function ModalIntro({
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Quê quán: </p>
-            <p className='w-[calc(100%-80px)] mt-[-4px] text-base font-mono'>Văn Lãng, Tân Dân, Phú Xuyên, Hà Nội</p>
+            <p className='w-[calc(100%-80px)] mt-[-4px] text-base font-mono'>Văn Lãng, Quang Trung, Phú Xuyên, Hà Nội</p>
           </div>
           <div className='flex items-start justify-start mt-1'>
             <p className='w-[80px] text-sm font-sans'>Yêu thích: </p>
