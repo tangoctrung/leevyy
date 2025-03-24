@@ -25,7 +25,7 @@ export function returnTypeDays(day: number, month: number): DAYS {
   if (day === 14 && month === 2) {
     return "14/2";
   }
-  if (day === 7 && month === 3) {
+  if (day === 8 && month === 3) {
     return "8/3";
   }
   if (day === 14 && month === 3) {

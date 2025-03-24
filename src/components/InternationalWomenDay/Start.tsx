@@ -21,7 +21,7 @@ function Start({
   return (
     <div>
       <motion.div
-        className='relative w-[96%] sm:w-[600px] aspect-[8/5] rounded-xl'
+        className='relative w-[96%] sm:w-[600px] aspect-[7/4] rounded-xl'
         initial={{ x: '-100vw', rotate: -45 }}
         animate={{ x: 0, rotate: 0 }}
         transition={{ type: 'spring', stiffness: 120, damping: 10 }}
@@ -56,8 +56,7 @@ function Start({
                   'Xin chào LeeVyy, đầu tiên anh muốn gửi lời chúc tốt đẹp nhất từ tận đáy lòng của anh đến em, chúc em một ngày 8/3 thật hạnh phúc và ý nghĩa.\n' +
                   'Đây là trang web đầu tiên mà anh làm chỉ để dành riêng cho một người (thực sự không nói xạo 😀😀😀).\n' +
                   'Anh mới bắt đầu làm cái này được mấy hôm thuii nên có lẽ vẫn còn hơi sơ xài xíu, mong em thích nó.\n' +
-                  'Món quà đầu tiên mà anh muốn cho em xem đó chính là "Vòng quay ánh sáng".\n' +
-                  'À thêm nữa, trang web này sẽ chỉ cập nhật giao diện vào các ngày lễ trong năm thui nhá, còn ngày bình thường nó sẽ có giao diện bình thường thoy...',
+                  'Món quà đầu tiên mà anh muốn cho em xem đó chính là "Vòng quay ánh sáng".\n',
                   () => {
                     setIsSound(false);
                     setStep("3")

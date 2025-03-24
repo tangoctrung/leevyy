@@ -17,7 +17,13 @@ function Subpage() {
     let day = now.getDate()
     let month = now.getMonth() + 1
     const type = process.env.NEXT_PUBLIC_TYPE_DAY as DAYS || returnTypeDays(day, month)
-    setTypeDay(type)
+    const timeOut = setTimeout(() => {
+      setTypeDay(type)
+    }, 3000)
+
+    return () => {
+      clearTimeout(timeOut)
+    }
   }, [])
 
   return (
