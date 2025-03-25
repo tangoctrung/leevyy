@@ -18,7 +18,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t 26022000/leevyy:latest ./leevyy
+          docker build -t 26022000/leevyy:latest .
 
       - name: Push Image to Docker Hub
         run: |
