@@ -19,7 +19,7 @@ function NormalDay() {
         <p className='w-full text-center font-mono text-xl sm:text-3xl font-bold'>{time}</p>
         <p className='mt-2 font-mono text-lg font-bold'>{formatTimeNormalDay()}</p>
         <p className='text-center font-mono text-[12px] font-medium text-gray-400'>Sắp tới: {formatTimeHolidayNormalDay()}</p>
-        <p className='text-center font-mono text-[12px] font-medium text-gray-400'>(Em hãy đến đây vào ngày này nhé)</p>
+        <p className='text-center font-mono text-[12px] font-medium text-gray-400'>(Hãy đến đây vào ngày này nhé)</p>
       </div>
     </div>
   )
