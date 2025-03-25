@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   generator: 'tntchat',
   applicationName: 'LeeVyy',
   referrer: 'origin-when-cross-origin',
-  keywords: ['LeeVyy', '8/3', 'quoctephunu', 'phunu', "sinhnhat", "20/10", "25/10", "tet"],
+  keywords: ['LeeVyy', 'quoctephunu', 'phunu', "sinhnhat", "20/10", "25/10"],
   authors: [{ name: 'trungtn' }, { name: 'trungtn', url: 'https://tntchat.vercel.app' }],
   creator: 'trungtn',
   publisher: 'VietNam',
