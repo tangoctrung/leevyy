@@ -2,7 +2,7 @@ import React from 'react'
 
 function LunarNewYearDay() {
   return (
-    <div></div>
+    <div>LunarNewYearDay</div>
   )
 }
 
