@@ -10,7 +10,7 @@
 body {
   color: var(--foreground);
   /* background: var(--background); */
-  background: radial-gradient(circle at center, #f5f5dc, #001f3f);
+  /* background: radial-gradient(circle at center, #f5f5dc, #001f3f); */
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -21,6 +21,24 @@ body {
 .iconClick {
   animation: changeSize 0.5s linear infinite;
 }
+
+.raindrop {
+  position: absolute;
+  top: -10%;
+  width: 2px;
+  height: 15vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh);
+  }
+}
+
 @keyframes roundle {
   0% {
     font-size: 24px;
