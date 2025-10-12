@@ -14,24 +14,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: 'LeeVyy',
-    default: 'LeeVyy'
+    template: 'Memory',
+    default: 'Memory'
   },
-  description: "Trang web này là của LeeVyy",
+  description: "Lưu giữ kỉ niệm",
   icons: {
     icon: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d',
   },
   openGraph: {
     locale: 'en_US',
     type: 'website',
-    siteName: 'LeeVyy',
-    description: "Trang web này là của LeeVyy",
+    siteName: 'Memory',
+    description: "Lưu giữ kỉ niệm",
     images: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d'
   },
   twitter: {
     site: '@trungtn',
-    title: 'LeeVyy',
-    description: 'Trang web này là của LeeVyy',
+    title: 'Memory',
+    description: 'Lưu giữ kỉ niệm',
     images: ['https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d']
   },
   metadataBase: new URL('https://acme.com'),

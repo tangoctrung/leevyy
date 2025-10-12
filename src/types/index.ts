@@ -29,4 +29,18 @@ export const dataMemory: any[] = [
     title: "Ngày chia tay:",
     date: "17/08/2025",
   },
+  {
+    title: "Ngày quay lại:",
+    date: "19/08/2025",
+  },
+  {
+    title: "Ngày sang thăm em :",
+    date: "14/09/2025 và 27/09/2025",
+  },
+  {
+    title: "Ngày chia tay:",
+    date: "09/10/2025",
+  },
 ];
+
+export const PASSWORD = "25102007";

@@ -3,15 +3,15 @@ import Subpage from "@/subpage/2025";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'LeeVyy',
-  description: 'Trang web này là của LeeVyy',
+  title: 'Memory',
+  description: 'Lưu giữ kỉ niệm',
   icons: {
     icon: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d',
   },
   generator: 'tntchat',
-  applicationName: 'LeeVyy',
+  applicationName: 'Memory',
   referrer: 'origin-when-cross-origin',
-  keywords: ['LeeVyy', 'quoctephunu', 'phunu', "sinhnhat", "20/10", "25/10"],
+  keywords: ['Memory', 'quoctephunu', 'phunu', "sinhnhat", "20/10", "25/10"],
   authors: [{ name: 'trungtn' }, { name: 'trungtn', url: 'https://tntchat.vercel.app' }],
   creator: 'trungtn',
   publisher: 'VietNam',
@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'LeeVyy',
-    description: 'Trang web này là của LeeVyy',
-    url: 'https://leevyy.vercel.app',
-    siteName: 'LeeVyy',
+    title: 'Memory',
+    description: 'Lưu giữ kỉ niệm',
+    url: 'https://memory.vercel.app',
+    siteName: 'Memory',
     images: [
       {
         url: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d', // Must be an absolute URL
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     site: '@trungtn',
-    title: 'LeeVyy',
-    description: 'Trang web này là của LeeVyy',
+    title: 'Memory',
+    description: 'Lưu giữ kỉ niệm',
     images: ['https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d']
   },
   metadataBase: new URL('https://acme.com'),
