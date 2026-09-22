@@ -1,16 +1,26 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { use, useEffect, useState } from 'react';
+import Image, { getImageProps } from 'next/image';
 import "./index.css"
 import { TypeAnimation } from 'react-type-animation';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import Modal from '@/components/common/modal';
 import SakuraFalling from './SakuraFall';
 
+const IMAGE_PRELOAD_URLS = [
+  '/ynnhi1.png',
+  '/ynnhi2.jpg',
+  '/ynnhi3.png',
+  '/ynnhi4.jpg',
+  '/ynnhi5.png',
+];
+const POPUP_IMAGE_SIZES = '(max-width: 640px) 90vw, 400px';
+
 type Props = {
 }
 function ImageCarousel3D({
 }: Props) {
 
+  const myAudioRef = React.useRef<HTMLAudioElement>(null);
   const [isComplete, setIsComplete] = useState(false)
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [isSound, setIsSound] = useState<boolean>(false)
@@ -44,11 +54,12 @@ function ImageCarousel3D({
     },
     {
       image: "/ynnhi3.png",
-      text: "Wow, hãy nhìn công chúa của anh nè, không biết em có ghen tỵ không, chứ anh hơi bị ghen tỵ vì nhan sắc siêu phẩm này nha.\n"
+      text: "Wow, hãy nhìn công chúa nè, không biết em có ghen tỵ không, chứ anh hơi bị ghen tỵ vì nhan sắc siêu phẩm này nha.\n" +
+        "Dù có nhiều lần em cứ bảo mình không xinh, nhưng mà không sao, trong mắt anh em là đẹp nhất😍😍😍"
     },
     {
       image: "/ynnhi4.jpg",
-      text: "Wow đúng là người tốt mà, người gì đâu vừa xinh vừa tốt😚😚😚\n"
+      text: "......................Wow đúng là người tốt mà, người gì đâu vừa xinh vừa tốt😚😚😚\n"
     },
     {
       image: "/ynnhi5.png",
@@ -63,6 +74,39 @@ function ImageCarousel3D({
         "Nó đã trở thành nơi tuyệt vời\n"
     }
   ]
+
+  useEffect(() => {
+    if (isComplete && myAudioRef.current) {
+      myAudioRef.current.volume = 0.6;
+    }
+  }, [isComplete])
+
+  useEffect(() => {
+    const imagePreloaders = IMAGE_PRELOAD_URLS.map((src) => {
+      const { props } = getImageProps({
+        src,
+        width: 600,
+        height: 800,
+        alt: '',
+        sizes: POPUP_IMAGE_SIZES,
+      });
+      const image = new window.Image();
+      image.decoding = 'async';
+      image.srcset = props.srcSet ?? '';
+      image.sizes = props.sizes ?? POPUP_IMAGE_SIZES;
+      image.src = props.src;
+      image.decode().catch(() => undefined);
+      return image;
+    });
+
+    return () => {
+      imagePreloaders.forEach((image) => {
+        image.onload = null;
+        image.onerror = null;
+      });
+    };
+  }, []);
+
   function handleClickImage(name: "image1" | "image2" | "image3" | "image4" | "image5") {
     if (imageChoosed[`${name}`] !== "/gift.gif") {
       return
@@ -147,7 +191,7 @@ function ImageCarousel3D({
           </button>
         </div>}
       {/* <div className='absolute w-full h-full bg-slate-400 blur-[100px]'></div> */}
-      <div className={`containerLightCycle relative z-20 w-[180px] h-[240px] mt-0 transition-all duration-300`}>
+      <div className={`containerLightCycle relative z-20 ${isComplete ? "w-[210px] h-[280px]" : "w-[180px] h-[240px]"}  mt-0 transition-all duration-300`}>
         <div className='itemContainerImage itemContainerImage1'>
           <Image
             src={imageChoosed.image1}
@@ -212,8 +256,9 @@ function ImageCarousel3D({
                 src={dataClick.image || ""}
                 width={600}
                 height={800}
+                sizes={POPUP_IMAGE_SIZES}
                 alt=''
-                className='itemImage'
+                className='itemImage imageReveal'
               />
               <div className='absolute z-[101] bottom-0 left-0 max-w-[100%] rounded-xl bg-gray-600/70 p-2 flex justify-center'>
                 <h3 className='w-fit font-mono text-base font-semibold'>
@@ -262,7 +307,7 @@ function ImageCarousel3D({
         </audio>}
 
       {isComplete &&
-        <audio autoPlay loop hidden>
+        <audio autoPlay loop hidden ref={myAudioRef}>
           <source src="/baby.mp3" type="audio/mpeg" />
         </audio>}
 
