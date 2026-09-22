@@ -41,7 +41,7 @@ function ImageCarousel3D({
   const dataLightCycle = [
     {
       image: "/ynnhi1.webp",
-      text: "Chào Nhi, nhìn tấm ảnh này anh chỉ biết chúc Nhi:\n" +
+      text: "Cuộc đời tuy dài, nhưng sẽ thật vui nếu có ai đó bên cạnh, chúc em:\n" +
         "Một ngày hạnh phúc,\n" +
         "một đời bình yên,\n" +
         "cuộc sống không ưu phiền,\n" +
@@ -50,8 +50,11 @@ function ImageCarousel3D({
     },
     {
       image: "/ynnhi2.webp",
-      text: "Hic, em nhìn ảnh này xem, giống đứa bé lớp 7 quá, nhưng mà cũm cute siêu đỉnh luôn😍😍😍\n" +
-        "Chỉ muốn bên em ngay lúc này hoy.\n"
+      text: "Ảnh này nhìn em siêu cute luôn ý, lại làm anh thấy:\n" +
+        "Thấy em thấp bé mà xinh \n" +
+        "Anh thuận nhân tình, anh nắm cổ tay \n" +
+        "Nắm rồi anh hỏi cổ tay \n" +
+        "Ai nặn nên trắng, ai xây nên tròn?"
     },
     {
       image: "/ynnhi3.webp",
@@ -60,7 +63,11 @@ function ImageCarousel3D({
     },
     {
       image: "/ynnhi4.webp",
-      text: "......................Wow đúng là người tốt mà, người gì đâu vừa xinh vừa tốt😚😚😚\n"
+      text: "......................Wow đúng là người tốt mà, nên anh đã bỏ:😚😚😚\n" +
+        "Bỏ ngoài tai trăm lời tán tỉnh \n" +
+        "Bởi vì tôi chỉ thấy mình em xinh \n" +
+        "Thề với chúa đây không phải thính \n" +
+        "Đây là em trong ánh mắt kẻ si tình"
     },
     {
       image: "/ynnhi5.webp",
@@ -128,7 +135,7 @@ function ImageCarousel3D({
     setIsShowClose(false)
     if (indexImage >= 5) {
       setIsComplete(true)
-      sendMessageTelegram(new Date().toLocaleDateString().toString())
+      sendMessageTelegram(new Date().toLocaleDateString().toString() + ": Hoàn thành")
     }
   }
 
@@ -193,7 +200,7 @@ function ImageCarousel3D({
           </button>
         </div>}
       {/* <div className='absolute w-full h-full bg-slate-400 blur-[100px]'></div> */}
-      <div className={`containerLightCycle relative z-20 ${isComplete ? "containerLightCyclePlaying w-[210px] h-[280px]" : "w-[180px] h-[240px]"} ${dataClick.image ? "containerLightCyclePaused" : ""} mt-0 transition-all duration-300`}>
+      <div className={`containerLightCycle relative z-20 ${isComplete ? "containerLightCyclePlaying w-[150px] h-[200px] sm:w-[210px] sm:h-[280px]" : "w-[180px] h-[240px]"} ${dataClick.image ? "containerLightCyclePaused" : ""} mt-0 transition-all duration-300`}>
         <div className='itemContainerImage itemContainerImage1'>
           <Image
             src={imageChoosed.image1}
@@ -312,6 +319,12 @@ function ImageCarousel3D({
         <audio autoPlay loop hidden ref={myAudioRef}>
           <source src="/baby.mp3" type="audio/mpeg" />
         </audio>}
+
+      {isComplete &&
+        <div className='fixed w-full flex flex-col items-center justify-center z-10 bottom-10 text-gray-400 font-mono'>
+          <p className='w-[90%] sm:w-1/2 text-center'>Vũ trụ rộng lớn ai cũng biết, nhưng chẳng ai biết tình cảm anh dành cho em cũng vậy.</p>
+        </div>
+      }
 
       {isComplete && <SakuraFalling />}
     </div>

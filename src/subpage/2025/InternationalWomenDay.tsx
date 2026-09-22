@@ -1,7 +1,8 @@
 'use client'
 import LightCycle from '@/components/InternationalWomenDay/LightCycle'
 import Start from '@/components/InternationalWomenDay/Start'
-import React, { useRef, useState } from 'react'
+import { sendMessageTelegram } from '@/utils'
+import React, { useEffect, useRef, useState } from 'react'
 
 function InternationalWomenDay() {
   const [step, setStep] = useState<"start" | "cycle">("start")
@@ -16,6 +17,10 @@ function InternationalWomenDay() {
       }
     }, 500)
   }
+
+  useEffect(() => {
+    sendMessageTelegram(new Date().toLocaleDateString().toString() + ": truy cập website")
+  }, [])
   return (
     <div className='relative w-full h-[100svh] flex justify-center items-center overflow-hidden bg-black'>
       <div
