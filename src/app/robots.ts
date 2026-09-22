@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/me/",
     },
-    sitemap: `https://leevyy.vercel.app/sitemap.xml`,
+    sitemap: `https://ynnhi.vercel.app/sitemap.xml`,
   };
 }

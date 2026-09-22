@@ -5,6 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import Modal from '@/components/common/modal';
 import SakuraFalling from './SakuraFall';
+import { sendMessageTelegram } from '@/utils';
 
 const IMAGE_PRELOAD_URLS = [
   '/ynnhi1.webp',
@@ -127,6 +128,7 @@ function ImageCarousel3D({
     setIsShowClose(false)
     if (indexImage >= 5) {
       setIsComplete(true)
+      sendMessageTelegram(new Date().toLocaleDateString().toString())
     }
   }
 
