@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     siteName: 'Memory',
     images: [
       {
-        url: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d', // Must be an absolute URL
+        url: 'https://cdn-media.sforum.vn/storage/app/media/anhthem/meme-tinh-yeu-64.jpg', // Must be an absolute URL
         width: 800,
         height: 600,
       },
       {
-        url: 'https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d', // Must be an absolute URL
+        url: 'https://cdn-media.sforum.vn/storage/app/media/anhthem/meme-tinh-yeu-64.jpg', // Must be an absolute URL
         width: 1800,
         height: 1600,
         alt: 'My custom alt',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     site: '@trungtn',
     title: 'Memory',
     description: 'Lưu giữ kỉ niệm',
-    images: ['https://firebasestorage.googleapis.com/v0/b/storagefile-8768a.appspot.com/o/leevyy%2Fleevyy.jpeg?alt=media&token=e151604d-5d1e-49fa-9d41-7c04599a4b8d']
+    images: ['https://cdn-media.sforum.vn/storage/app/media/anhthem/meme-tinh-yeu-64.jpg']
   },
   metadataBase: new URL('https://acme.com'),
 }

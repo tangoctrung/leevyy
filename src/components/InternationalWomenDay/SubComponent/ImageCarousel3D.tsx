@@ -5,7 +5,6 @@ import { TypeAnimation } from 'react-type-animation';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import Modal from '@/components/common/modal';
 import SakuraFalling from './SakuraFall';
-import ImageEffect from '../../Effect/ImageEffect';
 
 type Props = {
 }
@@ -30,9 +29,8 @@ function ImageCarousel3D({
   })
   const dataLightCycle = [
     {
-      image: "/leevyy1.jpeg",
-      // image: "/images.jpeg",
-      text: "Xin chào bé iu, 8/3 đầu tiên anh gặp được em nè, hi vọng em có một ngày thật là ý nghĩa. Dù chỉ là mới quen, nhưng mà chúc em:\n" +
+      image: "/ynnhi1.png",
+      text: "Chào Nhi, nhìn tấm ảnh này anh chỉ biết chúc Nhi:\n" +
         "Một ngày hạnh phúc,\n" +
         "một đời bình yên,\n" +
         "cuộc sống không ưu phiền,\n" +
@@ -40,28 +38,21 @@ function ImageCarousel3D({
         "😊😊😊😊😊",
     },
     {
-      image: "/leevyy5.png",
-      // image: "/images.jpeg",
+      image: "/ynnhi2.jpg",
       text: "Hic, em nhìn ảnh này xem, giống đứa bé lớp 7 quá, nhưng mà cũm cute siêu đỉnh luôn😍😍😍\n" +
-        "Ai da, bây giờ muốn nựng má em quá, siêu nhớ bé cưng luôn.\n" +
-        "À hôm nay có ai tặng hoa cũm bảo là mình có mối khác rồi nhé 😒😒😒, đừng có mà nhận hoa xong nhận tình cảm của người ta đó 😌😌😌.",
+        "Chỉ muốn bên em ngay lúc này hoy.\n"
     },
     {
-      image: "/leevyy3.jpeg",
-      // image: "/images.jpeg",
-      text: "Wow, hãy nhìn công chúa của anh nè, không biết em có ghen tỵ không, chứ anh hơi bị ghen tỵ vì nhan sắc siêu phẩm này nha.\n" +
-        "Môi thơm quá đi, lần gặp tới em biết phải làm gì rùi đó😉😉😉,"
+      image: "/ynnhi3.png",
+      text: "Wow, hãy nhìn công chúa của anh nè, không biết em có ghen tỵ không, chứ anh hơi bị ghen tỵ vì nhan sắc siêu phẩm này nha.\n"
     },
     {
-      image: "/leevyy2.jpeg",
-      // image: "/images.jpeg",
-      text: "Em định lườm ai zậy trời, nhìn ghéc vãi. Anh mà ở đấy là búng mũi em đó biết chưa😚😚😚\n" +
-        "Anh có bài thơ này tặng em nè, nhưng mà mở nốt hộp quà cuối nha, hehe\n"
+      image: "/ynnhi4.jpg",
+      text: "Wow đúng là người tốt mà, người gì đâu vừa xinh vừa tốt😚😚😚\n"
     },
     {
-      image: "/leevyy4.png",
-      // image: "/images.jpeg",
-      text: "Tặng em bài thơ này nè\n" +
+      image: "/ynnhi5.png",
+      text:
         "Đời anh sẽ chỉ là màn đêm\n" +
         "Nếu như không bao giờ em đến\n" +
         "Đời anh sẽ vô cùng hạnh phúc\n" +
@@ -69,8 +60,7 @@ function ImageCarousel3D({
         "Màn đêm trong anh phủ bầu trời\n" +
         "Cô đơn đau khổ khắp mọi nơi\n" +
         "Nhưng khi em vừa mới bước vào\n" +
-        "Nó đã trở thành nơi tuyệt vời\n" +
-        "Bài thơ còn một khúc nữa, nhưng mà anh sẽ đọc cho em nghe vào một dịp đặc biệt nha😚😚😚"
+        "Nó đã trở thành nơi tuyệt vời\n"
     }
   ]
   function handleClickImage(name: "image1" | "image2" | "image3" | "image4" | "image5") {
@@ -101,22 +91,63 @@ function ImageCarousel3D({
   }
 
   return (
-    <div className='relative'>
+    <div
+      className='relative w-full h-full flex flex-col items-center justify-center overflow-hidden'
+      style={{
+        background: 'linear-gradient(135deg, rgba(14, 17, 30, 0.96) 0%, rgba(28, 24, 49, 0.94) 28%, rgba(20, 29, 42, 0.96) 62%, rgba(18, 12, 28, 0.98) 100%)',
+      }}
+    >
+      <div
+        className='absolute inset-0 pointer-events-none opacity-80'
+        style={{
+          background: 'radial-gradient(circle at 20% 20%, rgba(255, 110, 170, 0.2), transparent 28%), radial-gradient(circle at 75% 15%, rgba(98, 138, 255, 0.25), transparent 30%), radial-gradient(circle at 50% 82%, rgba(145, 106, 255, 0.22), transparent 38%)',
+          filter: 'blur(56px)',
+        }}
+      />
+      <div
+        className='absolute inset-0 pointer-events-none'
+        style={{
+          backgroundImage: `
+            radial-gradient(2px 2px at 6% 18%, rgba(255,255,255,0.95) 0, transparent 100%),
+            radial-gradient(1.5px 1.5px at 12% 42%, rgba(255,255,255,0.7) 0, transparent 100%),
+            radial-gradient(1.8px 1.8px at 18% 72%, rgba(188,214,255,0.9) 0, transparent 100%),
+            radial-gradient(2.2px 2.2px at 26% 26%, rgba(255,255,255,0.85) 0, transparent 100%),
+            radial-gradient(1.7px 1.7px at 32% 58%, rgba(255,220,180,0.8) 0, transparent 100%),
+            radial-gradient(2px 2px at 40% 18%, rgba(255,255,255,0.95) 0, transparent 100%),
+            radial-gradient(1.8px 1.8px at 45% 78%, rgba(214,217,255,0.8) 0, transparent 100%),
+            radial-gradient(2.1px 2.1px at 52% 30%, rgba(255,255,255,0.9) 0, transparent 100%),
+            radial-gradient(1.7px 1.7px at 58% 68%, rgba(255,255,255,0.8) 0, transparent 100%),
+            radial-gradient(2px 2px at 64% 12%, rgba(192,245,255,0.9) 0, transparent 100%),
+            radial-gradient(1.8px 1.8px at 72% 34%, rgba(255,255,255,0.85) 0, transparent 100%),
+            radial-gradient(2.2px 2.2px at 78% 18%, rgba(255,255,255,0.9) 0, transparent 100%),
+            radial-gradient(1.9px 1.9px at 84% 46%, rgba(255,188,220,0.8) 0, transparent 100%),
+            radial-gradient(2px 2px at 90% 24%, rgba(255,255,255,0.95) 0, transparent 100%),
+            radial-gradient(1.6px 1.6px at 94% 68%, rgba(250,255,255,0.8) 0, transparent 100%),
+            radial-gradient(2.3px 2.3px at 14% 88%, rgba(255,255,255,0.9) 0, transparent 100%),
+            radial-gradient(1.6px 1.6px at 30% 92%, rgba(183,239,255,0.75) 0, transparent 100%),
+            radial-gradient(2px 2px at 48% 92%, rgba(255,255,255,0.9) 0, transparent 100%),
+            radial-gradient(1.8px 1.8px at 66% 86%, rgba(255,207,176,0.8) 0, transparent 100%),
+            radial-gradient(2.1px 2.1px at 82% 88%, rgba(255,255,255,0.9) 0, transparent 100%),
+            radial-gradient(1.5px 1.5px at 96% 88%, rgba(210,215,255,0.75) 0, transparent 100%)
+          `,
+          opacity: 1,
+        }}
+      />
       {!isComplete &&
-        <div className='fixed left-[20px] top-10'>
+        <div className='fixed left-[20px] top-20'>
           <button
-            className='w-[130px] h-[42px] hover:scale-[1.15] opacity-40 duration-200 flex items-center justify-center bg-gray-700 font-mono outline-none border-none rounded-lg cursor-pointer'
+            className='w-[130px] h-[42px] hover:scale-[1.15] duration-200 flex items-center justify-center bg-gray-700 font-mono outline-none border-none rounded-lg cursor-pointer'
             title='Click me'
             onClick={handleClickGuide}
           >
-            <p className="text-sm font-bold">Hướng dẫn</p>
+            <p className="text-sm font-bold text-white">Hướng dẫn</p>
             <div className='h-full w-[36px] flex justify-center items-center'>
               <Icon icon={"tdesign:gesture-click-filled"} className='iconClick w-6 h-6' />
             </div>
           </button>
         </div>}
-      <div className='absolute w-full h-full bg-slate-400 blur-[100px]'></div>
-      <div className="containerLightCycle relative w-[300px] h-[180px]">
+      {/* <div className='absolute w-full h-full bg-slate-400 blur-[100px]'></div> */}
+      <div className={`containerLightCycle relative z-20 w-[180px] h-[240px] mt-0 transition-all duration-300`}>
         <div className='itemContainerImage itemContainerImage1'>
           <Image
             src={imageChoosed.image1}
@@ -173,16 +204,23 @@ function ImageCarousel3D({
         ${dataClick.image ? "z-[900] opacity-100 " : "-z-10 opacity-0"} 
       `}
       >
-        <div className={`w-full h-full flex mt-[20svh] items-center flex-col`}>
+        <div className={`w-full h-full flex items-center justify-center flex-col`}>
           {dataClick.image &&
-            <div className='relative max-w-[700px] w-[90%] rounded-xl aspect-[5/3] overflow-hidden'>
-              <ImageEffect imageUrl={dataClick.image || ""} isVisible={dataClick.image ? true : false} />
-              <div className='absolute z-[101] bottom-[8px] left-0 max-w-[50%] rounded-md bg-gray-600/40 p-2 flex justify-center'>
+            <div className='relative max-w-[400px] w-[90%] sm:w-[40%] rounded-xl aspect-[3/4]'>
+              {/* <ImageEffect imageUrl={dataClick.image || ""} isVisible={dataClick.image ? true : false} /> */}
+              <Image
+                src={dataClick.image || ""}
+                width={600}
+                height={800}
+                alt=''
+                className='itemImage'
+              />
+              <div className='absolute z-[101] bottom-0 left-0 max-w-[100%] rounded-xl bg-gray-600/70 p-2 flex justify-center'>
                 <h3 className='w-fit font-mono text-base font-semibold'>
                   <TypeAnimation
                     sequence={[
                       // Same substring at the start will only be typed once, initially
-                      1500,
+                      1000,
                       () => {
                         setIsSound(true);
                         setIsShowClose(false);
@@ -193,33 +231,29 @@ function ImageCarousel3D({
                         setIsShowClose(true);
                       },
                     ]}
-                    speed={20}
+                    speed={60}
                     style={{ whiteSpace: 'pre-line', display: 'block' }}
                   />
                 </h3>
               </div>
               {isShowClose &&
                 <div
-                  className='absolute z-[101] top-0 left-0 cursor-pointer p-1 rounded-full bg-gray-200 font-mono font-semibold text-sm'
+                  className='flex justify-center items-center gap-1 absolute z-[101] bottom-[-40px] left-1/2 -translate-x-1/2 cursor-pointer px-3 py-1 rounded-lg bg-white font-mono font-semibold text-sm'
                   onClick={handleCloseImage}
                 >
-                  <Icon icon="iconamoon:close-bold" className='text-red-600' />
+                  <Icon icon="iconamoon:close-bold" className='text-red-600 text-2xl' />
                 </div>}
             </div>}
-
         </div>
       </div>
       <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal}>
-        <div className='p-5 rounded-xl w-[360px] bg-slate-700'>
-          <p className='text-base font-bold'>Ở đây có 5 phần quà: </p>
+        <div className='p-5 rounded-xl w-[90%] sm:w-[460px] bg-slate-700'>
+          <p className='text-base font-bold'>Ở đây có 5 ô bí ẩn: </p>
           <ul className='mt-2 text-sm font-semibold font-mono text-gray-300'>
-            <li className=''>+ Em ấn vào từng phần quà nó sẽ hiện ảnh và thông điệp anh muốn gửi đến em.</li>
-            <li>+ Khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc trên bên trái nhé. </li>
-            <li>+ Em mở xong 5 phần quà là hoàn thành:)), sau đó hãy thưởng thức nó.</li>
+            <li className=''>+ Em ấn vào từng ô ,nó sẽ hiện ảnh và thông điệp mà anh muốn gửi đến em.</li>
+            <li>+ Khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc dưới nhé. </li>
+            <li>+ Em mở xong 5 ô là hoàn thành:)), sau đó hãy thưởng thức thứ phía sau nó.</li>
           </ul>
-          {/* + Em ấn vào từng phần quà nó sẽ hiện ảnh và thông điệp anh muốn gửi đến em. <br />
-          + Khi thông điệp chạy xong sẽ hiện một nút để tắt ở góc trên bên trái nhé. <br />
-          + Em mở xong 5 phần quà là hoàn thành:)) */}
         </div>
       </Modal>
       {isSound &&

@@ -23,7 +23,7 @@ const ImageEffect = ({
 
   return (
     <div className="relative  w-full h-full flex flex-col items-center justify-center overflow-hidden">
-      <div className="relative w-[700px] h-[405px] object-cover">
+      <div className="relative w-[300px] h-[400px] object-cover">
         {tiles.map((tile, index) => (
           <motion.div
             key={index}

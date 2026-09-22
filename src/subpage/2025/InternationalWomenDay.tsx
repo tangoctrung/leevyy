@@ -17,7 +17,7 @@ function InternationalWomenDay() {
     }, 500)
   }
   return (
-    <div className='relative w-full h-[100svh] flex justify-center items-center overflow-hidden'>
+    <div className='relative w-full h-[100svh] flex justify-center items-center overflow-hidden bg-black'>
       <div
         className={`absolute top-0 w-full h-full flex justify-center mt-[30svh] transition-all duration-500 ease-linear ${step === "start" ? "opacity-100 z-10" : "opacity-0 -z-10"}`}
       >
