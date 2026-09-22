@@ -3,12 +3,52 @@
   animation: animate 15s linear infinite;
 }
 
+.containerLightCyclePlaying {
+  animation:
+    animate 15s linear infinite,
+    musicPulse 980ms ease-in-out infinite;
+  will-change: scale, box-shadow;
+}
+
+.containerLightCyclePaused,
+.containerLightCyclePaused.containerLightCyclePlaying {
+  visibility: hidden;
+  animation-play-state: paused;
+}
+
+.containerLightCyclePaused .itemContainerImage {
+  -webkit-box-reflect: unset;
+}
+
 @keyframes animate {
   0% {
     transform: perspective(1000px) rotateY(0deg);
   }
   100% {
     transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+@keyframes musicPulse {
+  0%, 100% {
+    scale: 1;
+    box-shadow: 0 0 18px rgba(116, 159, 255, 0.12);
+  }
+  18% {
+    scale: 1.055;
+    box-shadow: 0 0 38px rgba(131, 177, 255, 0.34);
+  }
+  36% {
+    scale: 1.012;
+    box-shadow: 0 0 22px rgba(231, 141, 255, 0.18);
+  }
+  55% {
+    scale: 1.034;
+    box-shadow: 0 0 32px rgba(229, 137, 255, 0.27);
+  }
+  76% {
+    scale: 1.006;
+    box-shadow: 0 0 20px rgba(116, 159, 255, 0.15);
   }
 }
 
@@ -82,8 +122,38 @@
   }
 }
 
+@keyframes imageRevealMobile {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.94);
+  }
+  72% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .imageReveal {
+    clip-path: none;
+    filter: none;
+    animation: imageRevealMobile 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    will-change: transform, opacity;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .imageReveal {
     animation: none;
+  }
+
+  .containerLightCyclePlaying {
+    animation: animate 15s linear infinite;
+    scale: 1;
+    box-shadow: none;
   }
 }

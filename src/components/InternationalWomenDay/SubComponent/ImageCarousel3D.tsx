@@ -7,11 +7,11 @@ import Modal from '@/components/common/modal';
 import SakuraFalling from './SakuraFall';
 
 const IMAGE_PRELOAD_URLS = [
-  '/ynnhi1.png',
-  '/ynnhi2.jpg',
-  '/ynnhi3.png',
-  '/ynnhi4.jpg',
-  '/ynnhi5.png',
+  '/ynnhi1.webp',
+  '/ynnhi2.webp',
+  '/ynnhi3.webp',
+  '/ynnhi4.webp',
+  '/ynnhi5.webp',
 ];
 const POPUP_IMAGE_SIZES = '(max-width: 640px) 90vw, 400px';
 
@@ -39,7 +39,7 @@ function ImageCarousel3D({
   })
   const dataLightCycle = [
     {
-      image: "/ynnhi1.png",
+      image: "/ynnhi1.webp",
       text: "Chào Nhi, nhìn tấm ảnh này anh chỉ biết chúc Nhi:\n" +
         "Một ngày hạnh phúc,\n" +
         "một đời bình yên,\n" +
@@ -48,21 +48,21 @@ function ImageCarousel3D({
         "😊😊😊😊😊",
     },
     {
-      image: "/ynnhi2.jpg",
+      image: "/ynnhi2.webp",
       text: "Hic, em nhìn ảnh này xem, giống đứa bé lớp 7 quá, nhưng mà cũm cute siêu đỉnh luôn😍😍😍\n" +
         "Chỉ muốn bên em ngay lúc này hoy.\n"
     },
     {
-      image: "/ynnhi3.png",
+      image: "/ynnhi3.webp",
       text: "Wow, hãy nhìn công chúa nè, không biết em có ghen tỵ không, chứ anh hơi bị ghen tỵ vì nhan sắc siêu phẩm này nha.\n" +
         "Dù có nhiều lần em cứ bảo mình không xinh, nhưng mà không sao, trong mắt anh em là đẹp nhất😍😍😍"
     },
     {
-      image: "/ynnhi4.jpg",
+      image: "/ynnhi4.webp",
       text: "......................Wow đúng là người tốt mà, người gì đâu vừa xinh vừa tốt😚😚😚\n"
     },
     {
-      image: "/ynnhi5.png",
+      image: "/ynnhi5.webp",
       text:
         "Đời anh sẽ chỉ là màn đêm\n" +
         "Nếu như không bao giờ em đến\n" +
@@ -191,7 +191,7 @@ function ImageCarousel3D({
           </button>
         </div>}
       {/* <div className='absolute w-full h-full bg-slate-400 blur-[100px]'></div> */}
-      <div className={`containerLightCycle relative z-20 ${isComplete ? "w-[210px] h-[280px]" : "w-[180px] h-[240px]"}  mt-0 transition-all duration-300`}>
+      <div className={`containerLightCycle relative z-20 ${isComplete ? "containerLightCyclePlaying w-[210px] h-[280px]" : "w-[180px] h-[240px]"} ${dataClick.image ? "containerLightCyclePaused" : ""} mt-0 transition-all duration-300`}>
         <div className='itemContainerImage itemContainerImage1'>
           <Image
             src={imageChoosed.image1}
@@ -244,8 +244,8 @@ function ImageCarousel3D({
         </div>
       </div >
 
-      <div className={`fixed left-0 top-0 w-[100svw] h-[100svh] transition-all duration-300 
-        ${dataClick.image ? "z-[900] opacity-100 " : "-z-10 opacity-0"} 
+      <div className={`fixed left-0 top-0 w-[100svw] h-[100svh] bg-[#050814] transition-opacity duration-300
+        ${dataClick.image ? "z-[900] opacity-100 " : "-z-10 opacity-0"}
       `}
       >
         <div className={`w-full h-full flex items-center justify-center flex-col`}>
