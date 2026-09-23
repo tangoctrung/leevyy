@@ -41,33 +41,33 @@ function ImageCarousel3D({
   const dataLightCycle = [
     {
       image: "/ynnhi1.webp",
+      text: "Wow, hãy nhìn công chúa nè, không biết em có ghen tỵ không, chứ anh hơi bị ghen tỵ vì nhan sắc siêu phẩm này nha.\n" +
+        "Dù có nhiều lần em cứ bảo mình không xinh, nhưng mà không sao, trong mắt anh em là đẹp nhất😍😍😍"
+    },
+    {
+      image: "/ynnhi2.webp",
+      text: "Ảnh này nhìn em siêu cute luôn ý, em có biết em là gì không:\n" +
+        "Em là đám mây trắng \n" +
+        "Anh là bầu trời xanh \n" +
+        "Trời hôm nay trống vắng \n" +
+        "Mây mau về với anh."
+    },
+    {
+      image: "/ynnhi3.webp",
+      text: "Vì em mà anh đã bỏ:😚😚😚\n" +
+        "Bỏ ngoài tai trăm lời tán tỉnh \n" +
+        "Bởi vì tôi chỉ thấy mình em xinh \n" +
+        "Thề với chúa đây không phải thính \n" +
+        "Đây là em trong ánh mắt kẻ si tình"
+    },
+    {
+      image: "/ynnhi4.webp",
       text: "Cuộc đời tuy dài, nhưng sẽ thật vui nếu có ai đó bên cạnh, chúc em:\n" +
         "Một ngày hạnh phúc,\n" +
         "một đời bình yên,\n" +
         "cuộc sống không ưu phiền,\n" +
         "và có anh kề bên.\n" +
         "😊😊😊😊😊",
-    },
-    {
-      image: "/ynnhi2.webp",
-      text: "Ảnh này nhìn em siêu cute luôn ý, lại làm anh thấy:\n" +
-        "Thấy em thấp bé mà xinh \n" +
-        "Anh thuận nhân tình, anh nắm cổ tay \n" +
-        "Nắm rồi anh hỏi cổ tay \n" +
-        "Ai nặn nên trắng, ai xây nên tròn?"
-    },
-    {
-      image: "/ynnhi3.webp",
-      text: "Wow, hãy nhìn công chúa nè, không biết em có ghen tỵ không, chứ anh hơi bị ghen tỵ vì nhan sắc siêu phẩm này nha.\n" +
-        "Dù có nhiều lần em cứ bảo mình không xinh, nhưng mà không sao, trong mắt anh em là đẹp nhất😍😍😍"
-    },
-    {
-      image: "/ynnhi4.webp",
-      text: "......................Wow đúng là người tốt mà, nên anh đã bỏ:😚😚😚\n" +
-        "Bỏ ngoài tai trăm lời tán tỉnh \n" +
-        "Bởi vì tôi chỉ thấy mình em xinh \n" +
-        "Thề với chúa đây không phải thính \n" +
-        "Đây là em trong ánh mắt kẻ si tình"
     },
     {
       image: "/ynnhi5.webp",
@@ -79,7 +79,8 @@ function ImageCarousel3D({
         "Màn đêm trong anh phủ bầu trời\n" +
         "Cô đơn đau khổ khắp mọi nơi\n" +
         "Nhưng khi em vừa mới bước vào\n" +
-        "Nó đã trở thành nơi tuyệt vời\n"
+        "Nó đã trở thành nơi tuyệt vời\n" +
+        "--- Bài này anh viết tặng em ---"
     }
   ]
 
@@ -200,7 +201,7 @@ function ImageCarousel3D({
           </button>
         </div>}
       {/* <div className='absolute w-full h-full bg-slate-400 blur-[100px]'></div> */}
-      <div className={`containerLightCycle relative z-20 ${isComplete ? "containerLightCyclePlaying w-[150px] h-[200px] sm:w-[210px] sm:h-[280px]" : "w-[180px] h-[240px]"} ${dataClick.image ? "containerLightCyclePaused" : ""} mt-0 transition-all duration-300`}>
+      <div className={`containerLightCycle relative z-20 ${isComplete ? "containerLightCyclePlaying w-[135px] h-[180px] sm:w-[210px] sm:h-[280px]" : "w-[145px] h-[195px] sm:w-[180px] sm:h-[240px]"} ${dataClick.image ? "containerLightCyclePaused" : ""} mt-0 transition-all duration-300`}>
         <div className='itemContainerImage itemContainerImage1'>
           <Image
             src={imageChoosed.image1}

@@ -138,6 +138,26 @@
 }
 
 @media (max-width: 640px) {
+  .itemContainerImage1 {
+    transform: rotateY(calc(1 * 72deg)) translateZ(175px);
+  }
+
+  .itemContainerImage2 {
+    transform: rotateY(calc(2 * 72deg)) translateZ(175px);
+  }
+
+  .itemContainerImage3 {
+    transform: rotateY(calc(3 * 72deg)) translateZ(175px);
+  }
+
+  .itemContainerImage4 {
+    transform: rotateY(calc(4 * 72deg)) translateZ(175px);
+  }
+
+  .itemContainerImage5 {
+    transform: rotateY(calc(5 * 72deg)) translateZ(175px);
+  }
+
   .imageReveal {
     clip-path: none;
     filter: none;

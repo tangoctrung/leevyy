@@ -32,7 +32,7 @@ function Start({
             <h2 className='w-full text-center font-serif text-3xl font-bold'>
               Lời mở đầu
             </h2>}
-          {(step === "1" || step === "2") &&
+          {(stepMain === "start" && step === "1" || step === "2") &&
             <p className='mt-3 sm:text-base text-sm font-medium font-mono'>
               <TypeAnimation
                 sequence={[
